@@ -1,3 +1,4 @@
+import { Chess } from "./Chess";
 import { Game } from "./Game";
 
 export class Home {
@@ -10,6 +11,7 @@ export class Home {
             <h1>Games</h1>
             <ul>
                 <li id="openSnakeGame">Play Snake</li>
+                <li id="openChessGame">Play Chess</li>
             </ul>
         </div>
     `;
@@ -22,6 +24,12 @@ export class Home {
     snakeGameBtn?.addEventListener("click", function handleClick(event) {
       let game = new Game(divId);
       game.start();
+    });
+
+    const chessGameBtn = document.getElementById("openChessGame");
+    chessGameBtn?.addEventListener("click", function handleClick(event) {
+      let chess = new Chess(divId);
+      chess.startGame();
     });
   }
 }
